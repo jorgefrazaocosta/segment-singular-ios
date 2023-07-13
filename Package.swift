@@ -14,8 +14,7 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/segmentio/analytics-ios.git", from: "4.1.0"),
-        .package(url: "https://github.com/singular-labs/singular-sdk-ios.git", from: "1.5.0")
+        .package(url: "https://github.com/segmentio/analytics-ios.git", from: "4.1.8"),
     ],
     targets: [
         .target(
