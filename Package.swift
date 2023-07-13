@@ -10,22 +10,19 @@ let package = Package(
     products: [
         .library(
             name: "Segment-Singular",
-            targets: ["Segment-Singular"]
+            targets: ["segment-singular-ios"]
         )
     ],
     dependencies: [
         .package(url: "https://github.com/segmentio/analytics-ios.git", from: "4.1.8"),
+        .package(url: "https://github.com/singular-labs/Singular-iOS-SDK.git", from: "12.0.7")
     ],
     targets: [
         .target(
             name: "Segment-Singular",
-            dependencies: [
-                .product(name: "Analytics", package: "analytics-ios"),
-                .product(name: "SingularSDK", package: "singular-sdk-ios")
-            ],
             path: "Segment-Singular-iOS",
             sources: [
-                "Segment-Singular-iOS" // Specify the folder containing your Swift source files
+                "Segment-Singular-iOS"
             ]
         )
     ]
