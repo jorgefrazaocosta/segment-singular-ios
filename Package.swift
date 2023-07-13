@@ -10,7 +10,7 @@ let package = Package(
     products: [
         .library(
             name: "Segment-Singular",
-            targets: ["segment-singular-ios"]
+            targets: ["Segment-Singular"]
         )
     ],
     dependencies: [
