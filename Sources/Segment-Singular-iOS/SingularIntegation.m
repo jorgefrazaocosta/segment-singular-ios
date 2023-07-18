@@ -7,10 +7,24 @@
 //
 
 #import "SingularIntegation.h"
-#import <Segment/SEGAnalyticsConfiguration.h>
-#import <Segment/SEGAnalytics.h>
 #import "Singular/Singular.h"
 #import "Singular/SingularConfig.h"
+
+#if defined(__has_include) && __has_include(<Analytics/SEGAnalyticsConfiguration.h>)
+#import <Analytics/SEGAnalyticsConfiguration.h>
+#elif defined(__has_include) && __has_include(<Segment/SEGAnalyticsConfiguration.h>)
+#import <Segment/SEGAnalyticsConfiguration.h>
+#else
+#import "SEGAnalyticsConfiguration.h"
+#endif
+
+#if defined(__has_include) && __has_include(<Analytics/SEGAnalytics.h>)
+#import <Analytics/SEGAnalytics.h>
+#elif defined(__has_include) && __has_include(<Segment/SEGAnalytics.h>)
+#import <Segment/SEGAnalytics.h>
+#else
+#import "SEGAnalytics.h"
+#endif
 
 #define SEGMENT_WRAPPER_NAME @"Segment"
 #define SEGMENT_WRAPPER_VERSION @"1.2.0"
