@@ -16,8 +16,8 @@ let package = Package(
     dependencies: [
         .package(
             name: "Segment",
-            url: "https://github.com/segmentio/analytics-swift.git",
-            from: "1.4.1"
+            url: "https://github.com/segmentio/analytics-ios",
+            from: "4.1.8"
         ),
         .package(
             name: "Singular",
