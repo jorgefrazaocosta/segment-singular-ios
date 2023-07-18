@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "Segment-Singular-iOS",
     platforms: [
-        .iOS("8.0"),
+        .iOS("8.0")
     ],
     products: [
         .library(
@@ -27,6 +27,11 @@ let package = Package(
     targets: [
         .target(
             name: "Segment-Singular-iOS",
-            dependencies: ["Segment", "Singular"])
+            dependencies: ["Segment", "Singular"],
+            publicHeadersPath: ".",
+            cSettings: [
+                .headerSearchPath(".")
+            ]
+        )
     ]
 )

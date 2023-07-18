@@ -1,5 +1,5 @@
 //
-//  Segment_Singular_iOS.h
+//  Segment-Singular-iOS.h
 //  Segment-Singular-iOS
 //
 //  Created by Eyal Rabinovich on 29/05/2019.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 //! Project version number for Segment_Singular_iOS.
-FOUNDATION_EXPORT double Segment_Singular_iOSVersionNumber; 
+FOUNDATION_EXPORT double Segment_Singular_iOSVersionNumber;
 
 //! Project version string for Segment_Singular_iOS.
 FOUNDATION_EXPORT const unsigned char Segment_Singular_iOSVersionString[];
