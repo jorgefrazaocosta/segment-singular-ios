@@ -4,15 +4,9 @@
 import PackageDescription
 
 let package = Package(
-    name: "Segment-Singular-iOS",
-    platforms: [
-        .iOS("8.0")
-    ],
-    products: [
-        .library(
-            name: "Segment-Singular-iOS",
-            targets: ["Segment-Singular-iOS"]),
-    ],
+    name: "SegmentSingular",
+    platforms: [.iOS(.v8)],
+    products: [.library(name: "SegmentSingular", targets: ["SegmentSingular"])],
     dependencies: [
         .package(
             name: "Segment",
@@ -26,12 +20,13 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Segment-Singular-iOS",
-            dependencies: ["Segment", "Singular"],
-            publicHeadersPath: ".",
-            cSettings: [
-                .headerSearchPath(".")
-            ]
+            name: "SegmentSingular",
+            dependencies: [
+              "Segment",
+              "Singular"
+            ],
+            path: "Segment-Singular/Classes",
+            publicHeadersPath: ""
         )
     ]
 )
