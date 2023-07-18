@@ -1,29 +1,32 @@
-// swift-tools-version:5.5
+// swift-tools-version:5.3
+// The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
-    name: "Segment-Singular",
+    name: "Segment-Singular-iOS",
     platforms: [
-        .iOS(.v8)
+        .iOS("8.0"),
     ],
     products: [
         .library(
-            name: "Segment-Singular",
-            targets: ["Segment-Singular"]
-        )
+            name: "Segment-Singular-iOS",
+            targets: ["Segment-Singular-iOS"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/segmentio/analytics-ios.git", from: "4.1.8"),
-        .package(url: "https://github.com/singular-labs/Singular-iOS-SDK.git", from: "12.0.7")
+        .package(
+            name: "Segment",
+            url: "https://github.com/segmentio/analytics-swift.git",
+            from: "1.4.1"
+        ),
+        .package(
+            name: "Singular",
+            url: "https://github.com/singular-labs/Singular-iOS-SDK.git",
+            from: "12.0.7")
     ],
     targets: [
         .target(
-            name: "Segment-Singular",
-            path: "Segment-Singular-iOS",
-            sources: [
-                "Segment-Singular-iOS"
-            ]
-        )
+            name: "Segment-Singular-iOS",
+            dependencies: ["Segment", "Singular"])
     ]
 )
