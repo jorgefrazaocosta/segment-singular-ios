@@ -41,32 +41,32 @@ static void(^conversionValueUpdatedCallback)(NSInteger);
 static int waitForTrackingAuthorizationWithTimeoutInterval = 0;
 static bool isInitialized = NO;
 
-- (instancetype)initWithSettings:(NSDictionary *)settings {
+- (id)initWithSettings:(NSDictionary *)settings {
     self = [super init];
     if (!self) {
         return self;
     }
-    
+
     [Singular setWrapperName:SEGMENT_WRAPPER_NAME andVersion:SEGMENT_WRAPPER_VERSION];
-    
+
     NSString* apiKey = [settings objectForKey:@"apiKey"];
     NSString* secret = [settings objectForKey:@"secret"];
-    
+
     if (!apiKey || !secret){
         return nil;
     }
-    
+
     SingularConfig* config = [[SingularConfig alloc] initWithApiKey:apiKey andSecret:secret];
-    
+
     config.skAdNetworkEnabled = isSKANEnabled;
     config.manualSkanConversionManagement = isManualMode;
     config.conversionValueUpdatedCallback = conversionValueUpdatedCallback;
     config.waitForTrackingAuthorizationWithTimeoutInterval = waitForTrackingAuthorizationWithTimeoutInterval;
-    
+
     [Singular start:config];
-    
+
     isInitialized = YES;
-    
+
     return self;
 }
 

@@ -12,8 +12,8 @@
 @implementation SingularIntegrationFactory
 
 + (instancetype)instance {
-    static dispatch_once_t once = 0;
-    static SingularIntegrationFactory *sharedInstance = nil;
+    static dispatch_once_t once;
+    static SingularIntegrationFactory *sharedInstance;
     dispatch_once(&once, ^{
         sharedInstance = [[self alloc] init];
     });
@@ -25,7 +25,8 @@
     return self;
 }
 
-- (nonnull id<SEGIntegration>)createWithSettings:(nonnull NSDictionary *)settings forAnalytics:(nonnull SEGAnalytics *)analytics {
+- (id<SEGIntegration>)createWithSettings:(NSDictionary *)settings forAnalytics:(SEGAnalytics *)analytics
+{
     return [[SingularIntegation alloc] initWithSettings:settings];
 }
 
