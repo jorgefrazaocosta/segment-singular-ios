@@ -8,15 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-#if defined(__has_include) && __has_include(<Analytics/SEGIntegration.h>)
+#if defined(__has_include) && __has_include(<Analytics/SEGAnalytics.h>)
 #import <Analytics/SEGIntegration.h>
-#elif defined(__has_include) && __has_include(<Segment/SEGIntegration.h>)
-#import <Segment/SEGIntegration.h>
 #else
-#import "SEGIntegration.h"
+@import Segment;
 #endif
-
-NS_ASSUME_NONNULL_BEGIN
 
 @interface SingularIntegation : NSObject<SEGIntegration>
 
@@ -25,5 +21,3 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setSKANOptions:(BOOL)skAdNetworkEnabled isManualSkanConversionManagementMode:(BOOL)manualMode withWaitForTrackingAuthorizationWithTimeoutInterval:(NSNumber* _Nullable)waitTrackingAuthorizationWithTimeoutInterval withConversionValueUpdatedHandler:(void(^_Nullable)(NSInteger))conversionValueUpdatedHandler;
 
 @end
-
-NS_ASSUME_NONNULL_END

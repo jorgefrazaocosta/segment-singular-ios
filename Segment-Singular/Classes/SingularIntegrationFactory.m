@@ -31,7 +31,7 @@
 }
 
 - (nonnull NSString *)key {
-    return @"webwook_Singular";
+    return @"Singular";
 }
 
 +(void)setSKANOptions:(BOOL)skAdNetworkEnabled isManualSkanConversionManagementMode:(BOOL)manualMode withWaitForTrackingAuthorizationWithTimeoutInterval:(NSNumber* _Nullable)waitTrackingAuthorizationWithTimeoutInterval withConversionValueUpdatedHandler:(void(^_Nullable)(NSInteger))conversionValueUpdatedHandler {

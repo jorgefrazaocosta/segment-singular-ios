@@ -19,11 +19,9 @@
 #endif
 
 #if defined(__has_include) && __has_include(<Analytics/SEGAnalytics.h>)
-#import <Analytics/SEGAnalytics.h>
-#elif defined(__has_include) && __has_include(<Segment/SEGAnalytics.h>)
-#import <Segment/SEGAnalytics.h>
+#import <Analytics/SEGAnalyticsUtils.h>
 #else
-#import "SEGAnalytics.h"
+@import Segment;
 #endif
 
 #define SEGMENT_WRAPPER_NAME @"Segment"
